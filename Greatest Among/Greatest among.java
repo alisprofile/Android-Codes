@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+// Import this if you want a tost message
+// import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
                 int max = findMax(firstNum, secondNum, thirdNum);
                 resultTextView.setText("The greatest number is: " + max);
+                //If you add this thid toast message instead of the above code line the output will display in a tost from 
+                //Toast.makeText(MainActivity.this, "The greatest number is: " + max, Toast.LENGTH_SHORT).show();
             }
         });
     }
