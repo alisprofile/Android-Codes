@@ -31,11 +31,20 @@ public class MainActivity extends AppCompatActivity {
 
                 if (username.equals("student") && password.equals("student123")) {
                     Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
-                    startActivity(intent);
+                    startActivityForResult(intent, 1); // start WelcomeActivity and wait for result
                 } else {
                     Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            Toast.makeText(MainActivity.this, "Logout Success", Toast.LENGTH_SHORT).show();
+        }
     }
 }
